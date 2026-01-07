@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mano a Mano Business | Comunicação e Marketing</title>
+    <meta name="description" content="Agência de Comunicação e Marketing. Estratégia, criatividade e resultados. Vamos crescer juntos.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary-gold': '#C8A885',
+              'primary-gold-hover': '#b08d65',
+              'bg-dark': '#0a0a0a',
+              'bg-card': '#141414',
+              'text-gray': '#b0b0b0',
+            },
+            fontFamily: {
+              montserrat: ['Montserrat', 'sans-serif'],
+              opensans: ['Open Sans', 'sans-serif'],
+            },
+            backgroundImage: {
+              'hero-pattern': "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80')",
+              'target-pattern': "linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1920&q=80')",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1, h2, h3, h4, h5 {
+        font-family: 'Montserrat', sans-serif;
+      }
+      /* Custom utility for the section title underline */
+      .section-title-underline {
+          display: block;
+          width: 60px;
+          height: 4px;
+          background-color: #C8A885;
+          margin-top: 10px;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+<body class="bg-bg-dark text-text-gray antialiased overflow-x-hidden relative">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full py-5 bg-[#0a0a0a]/95 backdrop-blur-md z-50 border-b border-[#C8A885]/10">
+        <div class="container mx-auto px-4 max-w-[1200px] flex justify-between items-center">
+            <a href="#" class="font-montserrat font-extrabold text-2xl text-white leading-none">
+                MANO A MANO
+                <span class="text-primary-gold block text-[0.8rem] font-normal tracking-[2px]">BUSINESS</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden text-white cursor-pointer" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:block">
+                <ul class="flex gap-8">
+                    <li><a href="#home" class="text-sm font-medium uppercase tracking-wider text-white hover:text-primary-gold transition-colors duration-300">Início</a></li>
+                    <li><a href="#quem-somos" class="text-sm font-medium uppercase tracking-wider text-white hover:text-primary-gold transition-colors duration-300">Quem Somos</a></li>
+                    <li><a href="#servicos" class="text-sm font-medium uppercase tracking-wider text-white hover:text-primary-gold transition-colors duration-300">Serviços</a></li>
+                    <li><a href="#metodologia" class="text-sm font-medium uppercase tracking-wider text-white hover:text-primary-gold transition-colors duration-300">Metodologia</a></li>
+                    <li><a href="#contato" class="text-sm font-medium uppercase tracking-wider text-white hover:text-primary-gold transition-colors duration-300">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Mobile Nav Overlay -->
+        <div id="mobile-menu" class="fixed top-[70px] left-0 w-full h-[calc(100vh-70px)] bg-bg-dark flex flex-col items-center justify-center transition-transform duration-300 border-t border-gray-800 -translate-x-full md:hidden">
+            <ul class="flex flex-col gap-8 text-center">
+                <li><a href="#home" class="mobile-link text-lg font-medium uppercase tracking-wider text-white hover:text-primary-gold transition-colors duration-300">Início</a></li>
+                <li><a href="#quem-somos" class="mobile-link text-lg font-medium uppercase tracking-wider text-white hover:text-primary-gold transition-colors duration-300">Quem Somos</a></li>
+                <li><a href="#servicos" class="mobile-link text-lg font-medium uppercase tracking-wider text-white hover:text-primary-gold transition-colors duration-300">Serviços</a></li>
+                <li><a href="#metodologia" class="mobile-link text-lg font-medium uppercase tracking-wider text-white hover:text-primary-gold transition-colors duration-300">Metodologia</a></li>
+                <li><a href="#contato" class="mobile-link text-lg font-medium uppercase tracking-wider text-white hover:text-primary-gold transition-colors duration-300">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="h-screen bg-hero-pattern bg-cover bg-center flex items-center justify-center text-center pt-20">
+        <div class="container mx-auto px-4 max-w-[900px]">
+            <h2 class="text-xl md:text-2xl font-light text-white mb-10 font-montserrat">
+                AGÊNCIA DE COMUNICAÇÃO E MARKETING
+            </h2>
+            <h1 class="text-4xl md:text-[4rem] leading-[1.1] mb-5 text-primary-gold uppercase font-bold font-montserrat">
+                Estratégia, Criatividade e Resultados
+            </h1>
+            <p class="text-lg md:text-[1.2rem] mb-8 text-[#ddd]">
+                Vamos crescer juntos. Mano a Mano.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#quem-somos" class="inline-block px-9 py-3.5 rounded bg-primary-gold text-bg-dark font-montserrat font-semibold uppercase tracking-wider border-2 border-transparent hover:bg-primary-gold-hover hover:-translate-y-0.5 transition-all duration-300 w-full md:w-auto">
+                    Conhecer Agência
+                </a>
+                <a href="https://www.instagram.com/mano_a_mano_business?igsh=c3RmMXo4MW8ybnVv" target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center gap-2 px-9 py-3.5 rounded border-2 border-primary-gold text-primary-gold font-montserrat font-semibold uppercase tracking-wider hover:bg-primary-gold hover:text-bg-dark hover:-translate-y-0.5 transition-all duration-300 w-full md:w-auto">
+                    Nossos Trabalhos Recentes <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="quem-somos" class="py-20">
+        <div class="container mx-auto px-4 max-w-[1200px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-lg">
+                    <div class="mb-6">
+                        <h2 class="text-3xl md:text-[2.5rem] font-bold text-white uppercase tracking-widest relative inline-block">
+                            Quem Somos
+                            <span class="section-title-underline"></span>
+                        </h2>
+                    </div>
+                    <p class="mb-5 text-[#b0b0b0]">
+                        Somos uma agência de comunicação e marketing que trabalha lado a lado com marcas e negócios para criar estratégias claras, criativas e eficazes.
+                    </p>
+                    <p class="mb-5 text-[#b0b0b0]">
+                        Acreditamos que o crescimento sustentável vem de uma parceria sólida. Entendemos o seu negócio, identificamos as oportunidades e executamos com excelência.
+                    </p>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-primary-gold text-xl font-bold mb-4 font-montserrat">O Que Entregamos:</h3>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <li class="flex items-center gap-2 text-text-gray"><i data-lucide="check" class="text-primary-gold w-4 h-4"></i> Estratégia</li>
+                            <li class="flex items-center gap-2 text-text-gray"><i data-lucide="check" class="text-primary-gold w-4 h-4"></i> Criatividade</li>
+                            <li class="flex items-center gap-2 text-text-gray"><i data-lucide="check" class="text-primary-gold w-4 h-4"></i> Proximidade</li>
+                            <li class="flex items-center gap-2 text-text-gray"><i data-lucide="check" class="text-primary-gold w-4 h-4"></i> Execução Profissional</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute -top-5 -left-5 w-full h-full border-2 border-primary-gold -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Equipe trabalhando junta" class="rounded md:max-w-full block grayscale group-hover:grayscale-0 transition-all duration-500 ease-in-out">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS SECTION -->
+    <section class="py-20 bg-bg-card">
+        <div class="container mx-auto px-4 max-w-[1200px]">
+            <div class="mb-6">
+                <h2 class="text-3xl md:text-[2.5rem] font-bold text-white uppercase tracking-widest relative inline-block">
+                    Quem Procuramos
+                    <span class="section-title-underline"></span>
+                </h2>
+            </div>
+            <p class="text-white mb-8">
+                Problemas que a <strong>Mano a Mano Business</strong> resolve para você.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-start p-5 bg-white/5 border-l-[3px] border-primary-gold hover:bg-[#C8A885]/10 transition-all duration-300">
+                        <i data-lucide="x-circle" class="text-primary-gold w-6 h-6 mt-1 mr-4 shrink-0"></i>
+                        <div>
+                            <h4 class="text-white text-lg font-bold mb-1">Marcas sem posicionamento</h4>
+                            <p>Empresas que não conseguem se destacar no mercado.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start p-5 bg-white/5 border-l-[3px] border-primary-gold hover:bg-[#C8A885]/10 transition-all duration-300">
+                        <i data-lucide="megaphone" class="text-primary-gold w-6 h-6 mt-1 mr-4 shrink-0"></i>
+                        <div>
+                            <h4 class="text-white text-lg font-bold mb-1">Comunicação confusa</h4>
+                            <p>Mensagens que não conectam com o público-alvo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-6 mt-6 md:mt-0">
+                    <div class="flex items-start p-5 bg-white/5 border-l-[3px] border-primary-gold hover:bg-[#C8A885]/10 transition-all duration-300">
+                        <i data-lucide="target" class="text-primary-gold w-6 h-6 mt-1 mr-4 shrink-0"></i>
+                        <div>
+                            <h4 class="text-white text-lg font-bold mb-1">Falta de estratégia</h4>
+                            <p>Ações isoladas que não geram construção de marca a longo prazo.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start p-5 bg-white/5 border-l-[3px] border-primary-gold hover:bg-[#C8A885]/10 transition-all duration-300">
+                        <i data-lucide="trending-up" class="text-primary-gold w-6 h-6 mt-1 mr-4 shrink-0"></i>
+                        <div>
+                            <h4 class="text-white text-lg font-bold mb-1">Resultados inconsistentes</h4>
+                            <p>Investimento em marketing sem retorno claro ou mensurável.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicos" class="py-20">
+        <div class="container mx-auto px-4 max-w-[1200px]">
+            <div class="mb-6">
+                <h2 class="text-3xl md:text-[2.5rem] font-bold text-white uppercase tracking-widest relative inline-block">
+                    Nossos Serviços
+                    <span class="section-title-underline"></span>
+                </h2>
+            </div>
+            <p class="mb-10 text-text-gray">Soluções completas para elevar o nível do seu negócio.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-bg-card p-10 text-center border border-white/5 hover:-translate-y-2 hover:border-primary-gold transition-all duration-300 relative overflow-hidden group">
+                    <div class="text-primary-gold mb-6 flex justify-center"><i data-lucide="swords" class="w-12 h-12"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-4 font-montserrat">Planejamento de Marketing</h3>
+                    <p class="text-text-gray group-hover:text-white transition-colors">Desenvolvimento de planos estratégicos alinhados aos objetivos do negócio.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-bg-card p-10 text-center border border-white/5 hover:-translate-y-2 hover:border-primary-gold transition-all duration-300 relative overflow-hidden group">
+                    <div class="text-primary-gold mb-6 flex justify-center"><i data-lucide="smartphone" class="w-12 h-12"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-4 font-montserrat">Estratégia Digital</h3>
+                    <p class="text-text-gray group-hover:text-white transition-colors">Gestão de redes sociais, tráfego pago e presença online.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-bg-card p-10 text-center border border-white/5 hover:-translate-y-2 hover:border-primary-gold transition-all duration-300 relative overflow-hidden group">
+                    <div class="text-primary-gold mb-6 flex justify-center"><i data-lucide="pen-tool" class="w-12 h-12"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-4 font-montserrat">Criação de Conteúdo</h3>
+                    <p class="text-text-gray group-hover:text-white transition-colors">Copywriting e storytelling para engajar sua audiência.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-bg-card p-10 text-center border border-white/5 hover:-translate-y-2 hover:border-primary-gold transition-all duration-300 relative overflow-hidden group">
+                    <div class="text-primary-gold mb-6 flex justify-center"><i data-lucide="palette" class="w-12 h-12"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-4 font-montserrat">Design Gráfico</h3>
+                    <p class="text-text-gray group-hover:text-white transition-colors">Identidade visual, branding e materiais publicitários.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="bg-bg-card p-10 text-center border border-white/5 hover:-translate-y-2 hover:border-primary-gold transition-all duration-300 relative overflow-hidden group">
+                    <div class="text-primary-gold mb-6 flex justify-center"><i data-lucide="video" class="w-12 h-12"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-4 font-montserrat">Produção Audiovisual</h3>
+                    <p class="text-text-gray group-hover:text-white transition-colors">Vídeos institucionais, comerciais e conteúdo para reels/tiktok.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="bg-bg-card p-10 text-center border border-white/5 hover:-translate-y-2 hover:border-primary-gold transition-all duration-300 relative overflow-hidden group">
+                    <div class="text-primary-gold mb-6 flex justify-center"><i data-lucide="newspaper" class="w-12 h-12"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-4 font-montserrat">Assessoria de Imprensa</h3>
+                    <p class="text-text-gray group-hover:text-white transition-colors">Gestão de reputação e relacionamento com a mídia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METHODOLOGY SECTION -->
+    <section id="metodologia" class="py-20 bg-bg-card">
+        <div class="container mx-auto px-4 max-w-[1200px]">
+            <div class="mb-6 text-center">
+                <h2 class="text-3xl md:text-[2.5rem] font-bold text-white uppercase tracking-widest relative inline-block">
+                    Metodologia
+                    <span class="section-title-underline mx-auto"></span>
+                </h2>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-8 mt-12">
+                <div class="flex-1 min-w-[200px] text-center relative pt-5">
+                    <div class="absolute top-[-30px] left-1/2 -translate-x-1/2 text-[4rem] font-extrabold text-[#C8A885]/20 font-montserrat z-0">1</div>
+                    <div class="relative z-10 pt-5">
+                        <h3 class="text-primary-gold text-xl font-bold mb-2 font-montserrat">Diagnóstico</h3>
+                        <p class="text-text-gray">Entendemos o cenário atual.</p>
+                    </div>
+                </div>
+                <div class="flex-1 min-w-[200px] text-center relative pt-5">
+                    <div class="absolute top-[-30px] left-1/2 -translate-x-1/2 text-[4rem] font-extrabold text-[#C8A885]/20 font-montserrat z-0">2</div>
+                    <div class="relative z-10 pt-5">
+                        <h3 class="text-primary-gold text-xl font-bold mb-2 font-montserrat">Estratégia</h3>
+                        <p class="text-text-gray">Definimos o caminho.</p>
+                    </div>
+                </div>
+                <div class="flex-1 min-w-[200px] text-center relative pt-5">
+                    <div class="absolute top-[-30px] left-1/2 -translate-x-1/2 text-[4rem] font-extrabold text-[#C8A885]/20 font-montserrat z-0">3</div>
+                    <div class="relative z-10 pt-5">
+                        <h3 class="text-primary-gold text-xl font-bold mb-2 font-montserrat">Criação</h3>
+                        <p class="text-text-gray">Damos vida às ideias.</p>
+                    </div>
+                </div>
+                <div class="flex-1 min-w-[200px] text-center relative pt-5">
+                    <div class="absolute top-[-30px] left-1/2 -translate-x-1/2 text-[4rem] font-extrabold text-[#C8A885]/20 font-montserrat z-0">4</div>
+                    <div class="relative z-10 pt-5">
+                        <h3 class="text-primary-gold text-xl font-bold mb-2 font-montserrat">Execução</h3>
+                        <p class="text-text-gray">Colocamos em prática.</p>
+                    </div>
+                </div>
+                <div class="flex-1 min-w-[200px] text-center relative pt-5">
+                    <div class="absolute top-[-30px] left-1/2 -translate-x-1/2 text-[4rem] font-extrabold text-[#C8A885]/20 font-montserrat z-0">5</div>
+                    <div class="relative z-10 pt-5">
+                        <h3 class="text-primary-gold text-xl font-bold mb-2 font-montserrat">Análise</h3>
+                        <p class="text-text-gray">Mensuramos os resultados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIFFERENTIATORS SECTION -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 max-w-[1200px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Diferencial" class="rounded grayscale hover:grayscale-0 transition-all duration-300 w-full">
+                </div>
+                <div>
+                    <div class="mb-6">
+                        <h2 class="text-3xl md:text-[2.5rem] font-bold text-white uppercase tracking-widest relative inline-block">
+                            Nosso Diferencial
+                            <span class="section-title-underline"></span>
+                        </h2>
+                    </div>
+                    <p class="mb-8 text-text-gray">Por que escolher a Mano a Mano Business?</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-[25px] h-[25px] bg-primary-gold rounded-full flex items-center justify-center text-black shrink-0">
+                                <i data-lucide="check" class="w-3.5 h-3.5 font-bold"></i>
+                            </div>
+                            <span class="font-semibold text-white">Comunicação próxima</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-[25px] h-[25px] bg-primary-gold rounded-full flex items-center justify-center text-black shrink-0">
+                                <i data-lucide="check" class="w-3.5 h-3.5 font-bold"></i>
+                            </div>
+                            <span class="font-semibold text-white">Soluções personalizadas</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-[25px] h-[25px] bg-primary-gold rounded-full flex items-center justify-center text-black shrink-0">
+                                <i data-lucide="check" class="w-3.5 h-3.5 font-bold"></i>
+                            </div>
+                            <span class="font-semibold text-white">Foco em resultado</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-[25px] h-[25px] bg-primary-gold rounded-full flex items-center justify-center text-black shrink-0">
+                                <i data-lucide="check" class="w-3.5 h-3.5 font-bold"></i>
+                            </div>
+                            <span class="font-semibold text-white">Linguagem clara</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-[25px] h-[25px] bg-primary-gold rounded-full flex items-center justify-center text-black shrink-0">
+                                <i data-lucide="check" class="w-3.5 h-3.5 font-bold"></i>
+                            </div>
+                            <span class="font-semibold text-white">Visão estratégica</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-[25px] h-[25px] bg-primary-gold rounded-full flex items-center justify-center text-black shrink-0">
+                                <i data-lucide="check" class="w-3.5 h-3.5 font-bold"></i>
+                            </div>
+                            <span class="font-semibold text-white">Eficiência</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARGET AUDIENCE SECTION -->
+    <section class="py-20 bg-target-pattern bg-cover bg-fixed text-center">
+        <div class="container mx-auto px-4 max-w-[1200px]">
+            <div class="mb-6">
+                <h2 class="text-3xl md:text-[2.5rem] font-bold text-white uppercase tracking-widest relative inline-block">
+                    Para Quem?
+                    <span class="section-title-underline mx-auto"></span>
+                </h2>
+            </div>
+            <p class="text-white text-xl mb-8">A Mano a Mano Business direciona-se para:</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <span class="px-6 py-2 border border-primary-gold text-white rounded-full text-sm uppercase tracking-wide hover:bg-primary-gold hover:text-bg-dark transition-all duration-300 cursor-default">Empresas</span>
+                <span class="px-6 py-2 border border-primary-gold text-white rounded-full text-sm uppercase tracking-wide hover:bg-primary-gold hover:text-bg-dark transition-all duration-300 cursor-default">Negócios Locais</span>
+                <span class="px-6 py-2 border border-primary-gold text-white rounded-full text-sm uppercase tracking-wide hover:bg-primary-gold hover:text-bg-dark transition-all duration-300 cursor-default">Marcas Pessoais</span>
+                <span class="px-6 py-2 border border-primary-gold text-white rounded-full text-sm uppercase tracking-wide hover:bg-primary-gold hover:text-bg-dark transition-all duration-300 cursor-default">Startups</span>
+                <span class="px-6 py-2 border border-primary-gold text-white rounded-full text-sm uppercase tracking-wide hover:bg-primary-gold hover:text-bg-dark transition-all duration-300 cursor-default">Projetos Criativos</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contato" class="bg-black py-20 border-t-2 border-primary-gold text-center pb-8">
+        <div class="container mx-auto px-4 max-w-[1200px]">
+            <div class="mb-12">
+                <div class="font-montserrat font-extrabold text-[3rem] text-white leading-[0.9] mb-8 inline-block">
+                    mn<br /><span class="text-primary-gold">business</span>
+                </div>
+                
+                <p class="text-2xl text-white font-light italic mb-2">
+                    "Marcas mais claras, mais fortes e mais relevantes no mercado."
+                </p>
+                <p class="text-primary-gold font-semibold tracking-wider uppercase">
+                    VAMOS CRESCER JUNTOS. MANO A MANO.
+                </p>
+
+                <div class="flex flex-col md:flex-row justify-center items-center gap-10 mt-12">
+                    <a href="tel:+244921532392" class="flex items-center gap-3 text-lg text-text-gray hover:text-primary-gold transition-colors">
+                        <i data-lucide="phone" class="text-primary-gold w-5 h-5"></i>
+                        <span>+244 921 532 392</span>
+                    </a>
+                    <a href="https://www.instagram.com/mano_a_mano_business?igsh=c3RmMXo4MW8ybnVv" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-lg text-text-gray hover:text-primary-gold transition-colors">
+                        <i data-lucide="instagram" class="text-primary-gold w-5 h-5"></i>
+                        <span>@mano_a_mano_business</span>
+                    </a>
+                    <div class="flex items-center gap-3 text-lg text-text-gray hover:text-primary-gold transition-colors">
+                        <i data-lucide="map-pin" class="text-primary-gold w-5 h-5"></i>
+                        <span>Vila da Catumbela - Benguela</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 pt-5 border-t border-[#222]">
+                <p class="text-sm text-[#555]">&copy; 2024 Mano a Mano Business. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/244921532392" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#128C7E] text-white p-3 md:p-4 rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.3)] hover:scale-110 transition-all duration-300 flex items-center justify-center group" aria-label="Fale conosco no WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 md:w-8 md:h-8">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            const icon = mobileMenuBtn.querySelector('i');
+            
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('-translate-x-full');
+                // Change icon to X (handled by Lucide, but we need to re-render or just toggle visibility if we had two icons. 
+                // Simple way: clear content and add new icon element, then re-run createIcons)
+                mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-7 h-7"></i>';
+                lucide.createIcons();
+            } else {
+                mobileMenu.classList.add('-translate-x-full');
+                mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7"></i>';
+                lucide.createIcons();
+            }
+        });
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('-translate-x-full');
+                mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-7 h-7"></i>';
+                lucide.createIcons();
+            });
+        });
+    </script>
+</body>
+</html>
